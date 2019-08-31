@@ -6,6 +6,10 @@ package main
 import "fmt"
 import "time"
 
+type testing struct {
+	name string
+}
+
 func main() {
 
 	// Here's a basic `switch`.
@@ -51,6 +55,8 @@ func main() {
 			fmt.Println("I'm a bool")
 		case int:
 			fmt.Println("I'm an int")
+		case testing:
+			fmt.Println("I'm an bowen", t.name)
 		default:
 			fmt.Printf("Don't know type %T\n", t)
 		}
@@ -58,4 +64,6 @@ func main() {
 	whatAmI(true)
 	whatAmI(1)
 	whatAmI("hey")
+	var a = testing{"bowen"}
+	whatAmI(a)
 }
